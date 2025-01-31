@@ -1,16 +1,64 @@
-html CopiarEditar  
-<!DOCTYPE html>  
-<html lang="es">  
-<head>  
- <meta charset="UTF-8">  
- <meta name="viewport" content="width=device-width, initial-scale=1.0">   <title>Mi Página Web</title>  
- <style>  
- body { font-family: Arial, sans-serif; text-align: center; }  
-h1 { color: blue; }  
- </style>  
-</head>  
-<body>  
- <h1>¡Bienvenidos a mi página web!Gonzalo Esteo Castro</h1>  
- <p>Esta es una página web creada con GitHub Pages.</p>  
-</body> 
-</html> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: blue;
+            transition: color 0.3s ease-in-out;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">¡Bienvenidos a mi página web!</h1>
+        <p>Esta es una página web creada con GitHub Pages.</p>
+        <button onclick="cambiarColor()">Cambiar Color</button>
+    </div>
+
+    <script>
+        function cambiarColor() {
+            const colores = ["blue", "red", "green", "purple", "orange"];
+            let titulo = document.getElementById("titulo");
+            let colorActual = titulo.style.color;
+            let nuevoColor;
+            do {
+                nuevoColor = colores[Math.floor(Math.random() * colores.length)];
+            } while (nuevoColor === colorActual);
+            titulo.style.color = nuevoColor;
+        }
+    </script>
+</body>
+</html>
+
